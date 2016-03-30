@@ -8,6 +8,9 @@ var rollNumber = function(format) {
             if (!from) {
                 from = 0;
             }
+            if(!!where[0] && typeof where !== 'string') {
+              where = where[0];
+            }
             var increment = (to - from) / this.frames;
             this.rollQueue.push({ where: where, from: from, to: to, increment: increment });
             // Process item if there is no queue
